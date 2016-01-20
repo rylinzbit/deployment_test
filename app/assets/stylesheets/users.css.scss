@@ -1,0 +1,39 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#subtext {
+  margin-top: 12px;
+}
+
+#logoff {
+  margin-left: 10px;
+}
+#errors {
+  margin-bottom: 0px;
+  margin-top: 3px;
+  height: 8px;
+  position: relative;
+}
+.each-error {
+  position: absolute;
+  transform: translate(0, -50%);
+  top: 50%;
+}
+#message-box {
+  height: 80px;
+  font-size: 1.2em;
+}
+
+#comment-box {
+  height: 60px;
+  font-size: 1.1em;
+}
+
+#messages-container {
+  margin-top: 15px;
+}
+#each-message {
+  width: 100%;
+  font-size: 1.5em;
+}

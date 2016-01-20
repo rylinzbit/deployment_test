@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row messages">
+    <div class="col col-sm-6 col-sm-offset-3">
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+        <p id="errors" class="alert alert-danger"><span class="each-error"><%= error %></span></p>
+        <% end %>
+      <% elsif flash[:login_error] %>
+          <p id="errors" class="alert alert-danger"><span class="each-error"><%= flash[:login_error] %></span></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="page-header">
+    <h1>Welcome to the Wall</h1>
+  </div>
+
+  <div id="content">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-1">
+        <h2>Registration</h2>
+        <form action="/users" method="post" role="form">
+          <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+          <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control" name="user[first_name]" placeholder="Enter first name">
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" class="form-control" name="user[last_name]" placeholder="Enter last name">
+          </div>          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="user[email]" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" name="user[password]" placeholder="Enter password">
+          </div>
+          <div class="form-group">
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" class="form-control" name="user[password_confirmation]" placeholder="Confirm password">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+
+      <div class="col-md-4 col-md-offset-2">
+        <h2>Login</h2>
+        <form action="/sessions" method="post" role="form">
+          <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="session[email]" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" name="session[password]" placeholder="Enter password">
+          </div>
+          <button type="submit" class="btn btn-default">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
